@@ -38,14 +38,14 @@ class HelloWorldScreen extends StatelessWidget {
               style:TextStyle(
                 fontSize:40 ,
                 fontWeight: FontWeight.bold,
-                color: Colors.blue,
+                color: Colors.yellow,
               ),
             ),
             const SizedBox(height: 20),
             Icon(
               Icons.code,
               size: 50,
-              color: Colors.green,
+              color: Colors.red,
             ),
             const SizedBox(height: 20),
             Text(
