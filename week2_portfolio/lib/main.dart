@@ -1,84 +1,39 @@
 import 'package:flutter/material.dart';
-void main () {
+import 'screens/portfolio_screen.dart';
+import 'models/portfolio_data.dart';
+
+void main() {
   runApp(const MyApp());
 }
-
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'INFT 425 - Acquaye Isaiah Leslie' ,
-      theme : ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const HelloWorldScreen(),
-    );
-  }
-}
-
-class HelloWorldScreen extends StatelessWidget {
-  const HelloWorldScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('INFT 425 - Acquaye Isaiah Leslie'),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'Hello World' ,
-              style:TextStyle(
-                fontSize:40 ,
-                fontWeight: FontWeight.bold,
-                color: Colors.yellow,
-              ),
-            ),
-            const SizedBox(height: 20),
-            Icon(
-              Icons.code,
-              size: 50,
-              color: Colors.red,
-            ),
-            const SizedBox(height: 20),
-            Text(
-              'Department of Computing Sciences and Engineering',
-              style: TextStyle(
-                fontSize: 16,
-                fontStyle: FontStyle.italic,
-              ),
-              textAlign: TextAlign.center,
-            ),
-          ],
+    final portfolioData = PortfolioData(
+      name: 'Acquaye Isaiah Leslie',
+      title: '300 Level Computer Science Student',
+      bio: 'Brief professional bio here....',
+      skills: ['Flutter', 'Dart', 'Firebase', 'Git', 'Rest APIs'],
+      education: [
+        Education(
+          institution: 'Valley View University',
+          degree: 'Bsc Computer Science',
+          year: '2023-present',
         ),
+      ],
+    );
+
+
+    return MaterialApp(
+      title: 'Professional Portfolio',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        useMaterial3: true,
       ),
+      home: PortfolioScreen(data: portfolioData),
     );
   }
+
 }
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
