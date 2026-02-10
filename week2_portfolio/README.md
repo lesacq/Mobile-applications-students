@@ -1,4 +1,4 @@
-# week1_project
+# week2_portfolio
 
 A new Flutter project.
 
